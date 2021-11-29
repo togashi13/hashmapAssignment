@@ -17,8 +17,16 @@ private:
     Node* nodes;
 
 public:
-
+    explicit SerializableHashMap(int size = 101);
+    /*
+    bool contains( const Node & x) const;
+    void makeEmpty();
+    bool insert( const Node & x);
+    bool insert( Node && x);
+    bool remove( const Node & x);
+    */
     
+
 
 
 
