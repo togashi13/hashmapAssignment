@@ -1,3 +1,4 @@
+#include <sstream>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -10,12 +11,13 @@ private:
     {
         uint32_t key;
         int val;
-	uint32_t next;
+       	uint32_t next;
     };
     Node** tables;
     Node* nodes;
 
 public:
+
     
 
 
@@ -25,8 +27,7 @@ public:
 
 
 
-}
-
+};
 
 int main()
 {
@@ -35,18 +36,29 @@ int main()
     // use chaining and change the node.next. 
    
     ifstream inFile;
-    inFile.open("~/dict.txt");
+    inFile.open("dict.txt");
     
-    if (!inFile)
+    if (inFile.is_open())
+    {   
+        cout << "Successfully opened dict.txt" << endl;
+    }else
     {
-	cerr << "Unable to open file dict.txt";
-	exit(1);
+	    cout << "Unable to open file dict.txt" << endl;
+	    exit(-1);
     }
-    while (inFile >> x)
+    string line;
+    while (!inFile.eof())
     {
-	sum = sum + x;
+        getline(inFile,line);
+        if (inFile.good())
+        {
+            cout << line << endl;
+            //hashMap.add(line);
+        }
+
     }
     inFile.close();     
-    SerializableHashMap m("dict.txt");
+    //    SerializableHashMap m("dict.txt");
 
+    return 0;
 }
