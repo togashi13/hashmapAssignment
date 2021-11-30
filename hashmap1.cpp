@@ -17,48 +17,6 @@ private:
     Node* nodes;
 
 public:
-    explicit SerializableHashMap(const string & fileName):tables{nullptr},nodes{nullptr}
-    {  
-        words = "";
-        ifstream inFile;
-        inFile.open(fileName);
-        
-        if (inFile.is_open())
-        {   
-            cout << "Successfully opened dict.txt" << endl;
-        }else
-        {
-            cout << "Unable to open file dict.txt" << endl;
-            exit(-1);
-        }
-        string line;
-        while (!inFile.eof())
-        {
-            getline(inFile,line);
-            if (inFile.good())
-            {
-                words += line + ",";
-                //hashMap.add(line);
-            }
-
-        }
-        words = words[0,words.length()-2];
-        inFile.close();     
-        /*
-        bool contains( const Node & x) const;
-        void makeEmpty();
-        bool insert( Node && x);
-        bool remove( const Node & x);
-        */
-    }
-    /*
-    bool insert( const string & x)
-    {
-        
-
-    }
-    
-    */
 
 
 
