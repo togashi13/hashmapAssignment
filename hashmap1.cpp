@@ -7,14 +7,6 @@ class SerializableHashMap
 {
 private: 
     string words;
-    struct Node
-    {
-        uint32_t key;
-        int val;
-       	uint32_t next;
-    };
-    Node** tables;
-    Node* nodes;
 
 public:
 
@@ -28,11 +20,6 @@ public:
 
 int main()
 {
-    // Initialize the Hashmap. For each word, add to the tables by hashing it and adding to the tables and nodes. 
-    // If not empty,
-    // use chaining and change the node.next. 
-   
-    //    SerializableHashMap m("dict.txt");
 
     string word;
     HashMapLinearChaining dict1(50000);
