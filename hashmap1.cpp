@@ -17,7 +17,7 @@ private:
     Node* nodes;
 
 public:
-    explicit SerializableHashMap(const string & fileName):tables{nullptr},Node{nullptr}
+    explicit SerializableHashMap(const string & fileName):tables{nullptr},nodes{nullptr}
     {  
         words = "";
         ifstream inFile;
@@ -42,7 +42,7 @@ public:
             }
 
         }
-        words = words[0,words.length-2];
+        words = words[0,words.length()-2];
         inFile.close();     
         /*
         bool contains( const Node & x) const;
@@ -51,14 +51,14 @@ public:
         bool remove( const Node & x);
         */
     }
-
+    /*
     bool insert( const string & x)
     {
         
 
     }
     
-
+    */
 
 
 
